@@ -142,7 +142,6 @@ class Simplex:
                     self.print_optimal_vector("Optimal vector")
                 else:
                     print("Optimal_vector",self.table[0][self.n_init+1:][:-1])
-                    print(self.func_init)
                 break
 
 
@@ -179,17 +178,19 @@ class Simplex:
 
         self.m = len(self.table)
         self.n = len(self.table[0])
-    
+
         self.simplex()
 
 
-arr=[[0.5,3,1,4],[1,1,1,1,40],[-2,-1,1,1,10],[0,1,0,-1,10]]
-A=Simplex(4,3,arr,"max")
+def run_solution(m,n,arr,mode):
+    #arr=[[0.5,3,1,4],[1,1,1,1,40],[-2,-1,1,1,10],[0,1,0,-1,10]]
+    A=Simplex(m,n,arr,mode)
 
-#arr=[[12,10],[2,12,20],[4,6,32],[3,0,14],[0,18,42]]
-#A=Simplex(2,4,arr,"min")
+    #arr=[[12,10],[2,12,20],[4,6,32],[3,0,14],[0,18,42]]
+    #A=Simplex(3,4,arr,"min")
 
-#arr=[[20, 32, 14, 42], [ 2, 4, 3, 0, 12], [12, 6, 0, 18, 10]]
-#A=Simplex(3,3,arr,"max")
+    #arr=[[20, 32, 14, 42], [ 2, 4, 3, 0, 12], [12, 6, 0, 18, 10]]
+    #A=Simplex(2,4,arr,"max")
 
-A.main()
+    A.main()
+
